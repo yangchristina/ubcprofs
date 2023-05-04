@@ -38,6 +38,9 @@ def get_courses_no_yearsession_v3(campus, subject):
 
 @bp.route('/v3/subjects/<string:campus>/<yearsession:ys>', methods=['GET'])
 def get_subjects_v3(campus, ys):
+    print()
+    print("SDJFSDJFLJSDKFLJS")
+    print()
     query = TDG2.query.with_entities(TDG2.subject, TDG2.subject_title).filter_by(campus=campus, year=ys.year,
                                                                               session=ys.session).distinct()
     result = [{
